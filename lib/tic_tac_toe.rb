@@ -84,5 +84,9 @@ class TicTacToe
       @board[combo[0]]
     end
   end
+  
+  def play 
+    
+  end 
 end
 
