@@ -63,8 +63,11 @@ class TicTacToe
     
   end
   
-  def full? 
-    
+  def full?
+    if cells.all?{|token| token == "X" || token == "O"} true
+    else
+      false 
+    end
   end
   
   def draw?
