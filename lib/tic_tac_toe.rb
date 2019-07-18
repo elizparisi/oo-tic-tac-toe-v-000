@@ -36,7 +36,7 @@ class TicTacToe
   end
   
   def move(index, token)
-    @board[index]
+    @board[index] = token
   end
   
   def position_taken?
@@ -64,10 +64,7 @@ class TicTacToe
   end
   
   def full?
-    if cells.all?{|token| token == "X" || token == "O"} true
-    else
-      false 
-    end
+
   end
   
   def draw?
