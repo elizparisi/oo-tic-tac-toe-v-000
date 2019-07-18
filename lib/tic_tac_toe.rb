@@ -1,27 +1,14 @@
 class TicTacToe
   
-  def initialize(board = [" "," "," "," "," "," "," "," "," "])
-    @board = board
+  def initialize
+    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
-  
-  def board=(board)
-    @board = board
-  end
-  
-  def board
-    @board
-  end
- 
- WIN_COMBINATIONS = [
-  [0,1,2],
-  [3,4,5],
-  [6,7,8],
-  [0,3,6],
-  [1,4,7],
-  [2,5,8],
-  [0,4,8],
-  [6,4,2]
-]
+
+  WIN_COMBINATIONS = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6]
+  ]
 
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
@@ -34,16 +21,16 @@ class TicTacToe
   def input_to_index(user_input)
     user_input.to_i - 1
   end
-  
+
   def move(index, token)
     @board[index] = token
   end
-  
+
   def position_taken?(index)
     @board[index] != " "
   end
-  
-  def valid_move? 
+
+  def valid_move?(index)
     !position_taken?(index) && index.between?(0,8)
   end
   
